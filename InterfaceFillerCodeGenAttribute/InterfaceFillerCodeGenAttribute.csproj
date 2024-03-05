@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<LangVersion>11.0</LangVersion>
+	
+	<Title>Interface Filler Code Generator Atttribute</Title>
+	<Description>Generate default interface implementation using back-up field.</Description>
+	<Authors>MA</Authors>
+	<Copyright>MIT</Copyright>
+	<Version>3.0.1-alpha01</Version>
+	
+  </PropertyGroup>
+
+ 
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.4.0" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
