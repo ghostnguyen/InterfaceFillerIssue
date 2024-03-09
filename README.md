@@ -21,11 +21,14 @@ Within minutes reading, all magic is revealed by 'Find all References'.
  - [2. Wrapper attribute]
  - [3. Wrapper parameters]
  - [4. Wrapper parameters resolution]
- - [5. Wrapper (with parameter) for `Task` method]
- - [6. Wrapper (with parameter) for `Task<TResult>` method]
- - [7. C# Caller attributes]
- - [8. CallerParamByName and CallerParamByIndex attributes]
- - [9. Reuse your Wrapper logic]
+ - [5. Wrapper return]
+ 
+ - [6. Wrapper (with parameter) for `Task` method]
+ - [7. Wrapper (with parameter) for `Task<TResult>` method]
+ - [8. C# Caller attributes]
+ - [9. CallerParamByName and CallerParamByIndex attributes]
+ - [10. Wrapper resolution in summary]
+ - [11. Reuse your Wrapper logic]
  - [Void method]
  - [Issue Report]
 
@@ -857,15 +860,15 @@ api.Func(1)
 // 1
 ```
 
-## 5. Wrapper (with parameter) for `Task` method
+## 6. Wrapper (with parameter) for `Task` method
 
 Signature: `async Task Wrapper(int a, Func<int, Task> next)`
 
-## 6. Wrapper (with parameter) for `Task<TResult>` method
+## 7. Wrapper (with parameter) for `Task<TResult>` method
 
 Signature: `async Task<T> Wrapper<T>(int a, Func<int, Task<T>> next)`
 
-## 7. C# Caller Attributes
+## 8. C# Caller Attributes
 
 Support C# built-in [caller attributes](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/caller-information)
 
@@ -897,7 +900,7 @@ public partial class TestApi : ITestApi
     }
 }
 ```
-## 8. CallerParamByName and CallerParamByIndex attributes
+## 9. CallerParamByName and CallerParamByIndex attributes
 
 - Apply attribute [CallerParamByName("paramName")] or [CallerParamByIndex(1,true)] to wrapper method param to match with interface method param
     - [CallerParamByName("paramName")] will match by paramName
@@ -950,14 +953,14 @@ public partial class TestApi : ITestApi
 }
 ```
 
-## 9 Wrapper resolution in summary
+## 10 Wrapper resolution in summary
 1. Has more parameters
 2. Then return type 
 3. Then more caller parameters
 
 NOTE: All wrapper methods name should NOT be the same in the class.
 
-## 10. Reuse your Wrapper logic
+## 11. Reuse your Wrapper logic
 
 - Move your Wrapper methods to other class. 
 - Decorate it's methods with [Wrapper] attribute and make them public.
